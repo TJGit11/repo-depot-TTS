@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html><head>
+    <link rel="stylesheet" type="text/css" href="ttsweek3/assets/stylesheets/HW-WK3-D4.css">
+</head>
+    <body>
+        <div id="myDIV" class="header">
+            <h2>To Do List</h2>
+            <input type="text" id="myInput" placeholder="Add to the list">
+            <span onclick="newElement()" class="addBtn">Add</span>
+        </div>
+        
+        <ul id="myUL">
+            <li>Clean the kitchen</li>
+            <li>Fold clothes</li>
+            <li>Study for test</li>
+            <li>Get gas</li>
+            <li>Change the lightbulb</li>
+            <li>Make dinner</li>
+        </ul>
+        <script>
+            
+                /* Add a "checked" symbol when clicking on a list item
+                var list = document.querySelector('ul');
+                list.addEventListener('click', function (ev) {
+                    if (ev.target.tagName === 'LI') {
+                        ev.target.classList.toggle('checked');
+                    }
+                }, false); 
+                */
+
+                // Remove item after 1 second?
+
+                 // Remove list item when clicked
+                    var list = document.querySelector('ul');
+                    list.addEventListener('click', function (ev) {
+                        ev.target.remove();
+
+                    });
+                
+
+                // Create a new list item when clicking on the "Add" button
+                function newElement() {
+                    var li = document.createElement("li");
+                    var inputValue = document.getElementById("myInput").value;
+                    var t = document.createTextNode(inputValue);
+                    li.appendChild(t);
+                    if (inputValue === '') {
+                        alert("You must write something!");
+                    } else {
+                        document.getElementById("myUL").appendChild(li);
+                    }
+                    document.getElementById("myInput").value = "";
+                } 
+                </script>
+    </body>
+</html>
