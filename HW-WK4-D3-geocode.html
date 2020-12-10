@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Document</title>
+</head>
+<h2>Geocode</h2>
+<body>
+
+    <script>
+           fetch('http://geocode.xyz/seattle?json=1')
+                .then((res)=>{
+                    res.json().then((data)=>{
+                        console.log('Latitude: ' + data.latt)
+                        console.log('Longitude: ' + data.longt)
+                })
+            })
+
+            // fetch('http://geocode.xyz/new_orleans?json=1')
+            //         .then((res) => {
+            //             res.json().then((data) => {
+            //                 console.log('Latitude: ' + data.latt)
+            //                 console.log('Longitude: ' + data.longt)
+            //             })
+            //         })
+
+            // fetch('http://geocode.xyz/orlando?json=1')
+            //         .then((res) => {
+            //             res.json().then((data) => {
+            //                 console.log('Latitude: ' + data.latt)
+            //                 console.log('Longitude: ' + data.longt)
+            //             })
+            //         })
+    </script>
+    
+</body>
+</html>
